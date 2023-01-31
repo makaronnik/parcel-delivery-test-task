@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Services\Delivery\NovaPoshta;
 use Illuminate\Support\ServiceProvider;
+use App\Contracts\Delivery\DeliveryService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(DeliveryService::class, NovaPoshta::class);
     }
 
     /**

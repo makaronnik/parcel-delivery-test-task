@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\DeliveryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::prefix('delivery')->group(function () {
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    Route::post('/send', [DeliveryController::class, 'send'])->name('delivery.send');
+
+    Route::get('/status', [DeliveryController::class, 'getStatus'])->name('delivery.get_status');
+
 });
