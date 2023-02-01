@@ -24,7 +24,6 @@ final class SendRequest extends FormRequest
     public function rules() : array
     {
         return [
-            'delivery_service' => ['required', 'string'],
             'parcel_width' => ['required', 'decimal:0,2', 'min:0.1'],
             'parcel_height' => ['required', 'decimal:0,2', 'min:0.1'],
             'parcel_length' => ['required', 'decimal:0,2', 'min:0.1'],
