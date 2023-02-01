@@ -15,8 +15,8 @@ use App\Http\Controllers\Api\V1\DeliveryController;
 */
 Route::prefix('delivery')->group(function () {
 
-    Route::post('/send', [DeliveryController::class, 'send'])->name('delivery.send');
+    Route::post('/send', [DeliveryController::class, 'send'])->name('api.v1.delivery.send');
 
-    Route::get('/status', [DeliveryController::class, 'getStatus'])->name('delivery.get_status');
+    Route::get('/status', [DeliveryController::class, 'getStatus'])->name('api.v1.delivery.get_status');
 
 });
